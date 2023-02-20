@@ -4,12 +4,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
-import { useCallback } from 'react';
-import { AuthContext } from '../Context/CardContext';
 
 const MultiActionAreaCard = ({ product, funCar }) => {    
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 345, height:400 }}>
             <CardActionArea>
                 <CardMedia
                     component="img"
@@ -22,16 +20,16 @@ const MultiActionAreaCard = ({ product, funCar }) => {
                         {product.title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {product.description}' '
+                        {product.description}
                         R$ {product.price}
                     </Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                {/* <Button size="small" color="primary" type='button' onClick={() => funcCart(product.id)}>
+                 <Button size="small" color="primary" type='button' onClick={() => funCar(product.id)}>
                     Comprar
-                </Button> */}
-                <button onClick={ () => funCar(product.id)}>Comprar</button>
+                </Button> 
+                {/* <button onClick={ () => funCar(product.id)}>Comprar</button> */}
             </CardActions>
         </Card>
     );

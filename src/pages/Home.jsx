@@ -11,7 +11,7 @@ const Home = () => {
         <div className='product'>
             {
                 data.map((product, index) => (
-                    <div key={index} >
+                    <div key={index} className='card' >
                         <MultiActionAreaCard product={product} funCar={funCar} />
                     </div>
                 ))
