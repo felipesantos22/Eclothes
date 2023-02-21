@@ -17,20 +17,23 @@ export function AuthProvider({ children }) {
         setCart([...cart, newCart]);
     }
 
+    const deleteProduct = (id) => {
+        const deleteCart = cart.filter((item) => item.id !== id);
+        setCart(deleteCart);
+    }
+
+    const totalValue = cart.reduce((acc, cur) => acc + cur.price, 0)
+
     useEffect(() => {
         funcApi();
     }, [])
 
-    // const values = useMemo(() => ({
-    //     data,
-    //     cart,        
-    //     funcCart
-    // }), [data, cart, funcCart]);
-
     const values = {
         data,
         cart,
-        funCar
+        totalValue,
+        funCar,
+        deleteProduct
     }
 
     return (

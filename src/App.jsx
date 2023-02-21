@@ -1,11 +1,11 @@
 import React from 'react'
-import MultiActionAreaCard from './components/Card'
+import Header from './components/Header'
 import Home from './pages/Home'
 
 const App = () => {
   return (
-    <div>
-      <Home/>      
+    <div>      
+    <Header/>
     </div>
   )
 }
