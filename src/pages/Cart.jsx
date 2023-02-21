@@ -7,12 +7,11 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 import { useContext } from 'react';
 import { AuthContext } from '../Context/CardContext';
 import '../css/Home.css'
-import Header from '../components/Header'
 
 const Cart = () => {
     const { cart, deleteProduct, totalValue } = useContext(AuthContext);
     return (
-        <>          
+        <>        
         <div className='product'>
             {
                 cart.map((product, index) => (
