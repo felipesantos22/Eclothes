@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../css/Header.css'
-import {  
+import {
   Switch,
   Route,
   Link,
@@ -9,12 +9,16 @@ import About from '../pages/About';
 import Cart from '../pages/Cart';
 import Home from '../pages/Home';
 import { FaOpencart } from 'react-icons/fa'
+import { FaCashRegister } from 'react-icons/fa';
+import { AuthContext } from '../Context/CardContext';
 
 
 const Header = () => {
+  const { totalValue } = useContext(AuthContext);
   return (
     <div>
       <nav className='nav'>
+        <span className='cash'><FaCashRegister /> R$ {totalValue}</span>
         <ul className='list'>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>

@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
-const MultiActionAreaCard = ({ product, funCar }) => {    
+const MultiActionAreaCard = ({ product, AddToCar }) => {    
     return (
         <Card sx={{ maxWidth: 345, height:400 }}>
             <CardActionArea>
@@ -26,10 +26,9 @@ const MultiActionAreaCard = ({ product, funCar }) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                 <Button size="small" color="primary" type='button' onClick={() => funCar(product.id)}>
+                 <Button size="small" color="primary" type='button' onClick={() => AddToCar(product.id)}>
                     Comprar
-                </Button> 
-                {/* <button onClick={ () => funCar(product.id)}>Comprar</button> */}
+                </Button>                 
             </CardActions>
         </Card>
     );
