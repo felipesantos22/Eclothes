@@ -17,11 +17,26 @@ export function AuthProvider({ children }) {
         const newCart = data.find((item) => item.id === id);
         console.log(newCart);
         setItem('Cart', [...cart, newCart]);
-        setCart([...cart, newCart]);
+        setCart([...cart, { newCart, Quantity: 1 }]);
     }
+
+    // const AddToCar = (id) => {
+    //     const addItem = data.find((item) => item.id === id);
+    //     const addQty = { amount: 1 };
+    //     const itemInCart = Object.assign(addItem, addQty);
+    //     console.log(addItem);
+    //     // console.log(newAdd); 
+    //     if (itemInCart) {
+    //         cart.map((item) => {
+    //             item.id === id ? setCart([...cart, item.amount + 1]) : item
+    //         })
+    //     }
+    //     setCart([...cart, itemInCart]);
+    // }
 
     const deleteProduct = (id) => {
         const deleteCart = cart.filter((item) => item.id !== id);
+        setItem('Cart', deleteCart);
         setCart(deleteCart);
     }
 
@@ -29,6 +44,7 @@ export function AuthProvider({ children }) {
 
     const clearCart = () => {
         setCart([])
+        localStorage.clear();
     }
 
     useEffect(() => {

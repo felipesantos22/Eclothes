@@ -21,7 +21,7 @@ const MultiActionAreaCard = ({ product, AddToCar }) => {
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                         {product.description}
-                        R$ {product.price}
+                        R$ {product.price}                        
                     </Typography>
                 </CardContent>
             </CardActionArea>

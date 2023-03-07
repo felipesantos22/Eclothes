@@ -15,7 +15,7 @@ const Cart = () => {
         <>
             <div className='product'>
                 {
-                    cart.length === 0 ? <h1>Carrinho Vazio</h1> :
+                    cart.length === 0 ? <h1 style={{textAlign:'center'}}>Carrinho Vazio</h1> :
                         cart.map((product, index) => (
                             <div key={index} >
                                 <Card sx={{ maxWidth: 345, height: 400 }}>
@@ -32,7 +32,8 @@ const Cart = () => {
                                             </Typography>
                                             <Typography variant="body2" color="text.secondary">
                                                 {product.description}' '
-                                                R$ {product.price}
+                                                R$ {product.price}' '
+                                                Quantidade : {product.amount}
                                             </Typography>
                                         </CardContent>
                                     </CardActionArea>
